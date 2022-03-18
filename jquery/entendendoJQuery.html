@@ -10,10 +10,15 @@
 
 <body class="conteudo exercicio">
     <h1>Entendendo jQuery</h1>
-    <div>1</div>
+    <div id="div1">1</div>
     <div>2</div>
 
     <script>
-        // ...
+        $('div').hide(1000).show(1000).fadeOut(1000).fadeIn(1000)
+        
+        // console.log($('div').get(0))
+        console.log($.isEmptyObject({id: 123})) //verificar se o obj está vazio
+        const arr = [1, 2, 3]
+        console.log(jQuery.inArray(3, arr)) //verifica se existe aquele elemento no array
     </script>
 </body>

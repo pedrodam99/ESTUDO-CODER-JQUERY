@@ -49,6 +49,30 @@
     </form>
 
     <script>
-        // ...
+        $('#feira').addClass('destaque').removeClass('destaque')
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+        $('li.opcional').removeClass('destaque')
+        $('div p span').addClass('destaque')
+
+        //Exclusivos do JQuery
+        $('li:first').css('border', 'solid 3px yellow') // seleciona o primeiro li
+        $('li:odd').css('border', 'solid 10px orange') // seleciona os impares
+        $('li:gt(1)').css('border', 'solid 10px white') //seleciona os elementos com o indice maiores do que 1
+        $('li:not(:last)').css('border', 'none') // seleciona os não ultimo (os 3 primeiros)
+        $('li:contains("r")').css('background', 'black') //seleciona os elementos que tem a letra "r"
+
+        //Para forumlários
+        
+        //esconde todos os campos do formulário
+        $('form *').hide()
+        //mostra campos do tipo que foi passado
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
+
+
     </script>
 </body>
