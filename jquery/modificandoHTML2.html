@@ -17,6 +17,46 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        //append() e prepend() vem primeiro o seletor depois o conteudo
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        //appendTo() e prependTo() vem primeiro o conteudo, depois o seletor
+        $('<span>, 3 </span>').appendTo('#div1')
+        $('<span>-1, </span>').prependTo('#div1')
+
+        //before() e after()  vem primeiro o seletor depois o conteudo
+        $('#div2').before('<p>Antes 1</p>')
+        $('#div2').after('<p>Depois 1</p>')
+
+        // insertAfter() e insertBefore() vem primeiro o conteudo, depois o seletor
+        $('<p> Antes 2 </p>').insertBefore('#div3')
+        $('<p> Depois 2 </p>').insertAfter('#div3')
+
+        //wrap() serve para "envolver" os elementos passados
+        // $('p.numero').wrap('<div>')
+
+        //wrapAll() envolve todos os elementos que corresponde a oque foi passado
+        $('p.numero').wrapAll('<div id="div4">')
+
+        //empty() limpa o conteudo da div
+        $('#div4').empty()
+
+        //remove() remove o elemento do texto HTML
+        $('#div3, #div4').prev().remove()
+        
+        //replaceAll() e replaceWith() substituim todos os elementos passados, pelo conteudo passado
+        
+        //primeiro o conteudo depois o seletor
+        $('<div> Substituto </div>').replaceAll('body > p')
+
+        //primeiro o seletor, depois o conteudo
+        $('body > p').replaceWith('<div> Substituto </div>')
+
+        //dentro do replaceWith podemos passar uma função callback, ganhando mais flexibilidade
+        $('body > p').replaceWith(function(){
+            return $('<div>').html($(this).html()).append('!!!')
+        })
     </script>
+
 </body>
