@@ -12,9 +12,35 @@
     <h1>Manipulando CSS</h1>
     <div id='div1'>1</div>
     <div id='div2'>2</div>
-    <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+
+        //Aqui usamos css() para ler o valor de uma variavel
+        const fonte = $('#div1').css('font-family')
+        $('#resultado').append(`Fonte é ${fonte}`)
+        //Mas CSS serve também para alterar o valor do CSS
+        $('#div1').css('font-size', '3em')
+        //Também podemos alterar um conjunto de atributos a partir de um objeto
+        $('#div1').css({'font-size' : '3.5em', 'color' : 'yellow'})
+        //Tem também a possibilidade de passar uma função callback
+        $('#div1').css('font-size', function () {
+            return `${2 * 2}em`
+        })
+
+        //ADD classe via JQuery
+        $('#div2').addClass('destaque')
+        //Verificar se o elemento detem aquela classe
+        const temClasse = $('#div2').hasClass('destaque')
+        $('#resultado').append(`<br> Tem classe? ${temClasse}`)
+        //remove a classe
+        $('#div2').removeClass('destaque')
+        //toggle() alterna, se tive ele remove, se não tiver ele add
+        $('#div2').toggleClass('destaque') //add pq não tinha
+        $('#div2').toggleClass('destaque') //removeu pq tinha
+        
+
+
+
+
     </script>
 </body>
