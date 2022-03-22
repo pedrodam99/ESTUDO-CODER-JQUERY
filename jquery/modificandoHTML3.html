@@ -21,12 +21,14 @@
             { nome: 'Pedro', nota: 5.7 },
             { nome: 'Felipe', nota: 8.5 }
         ]
-        
+    
+    // Criando as table rows
     const linhas = alunos.map(aluno => {
         const tdNome = $('<td>').append(aluno.nome)
         const tdNota = $('<td>').append(aluno.nota)
         return $('<tr>').append(tdNome, tdNota)
     })
+    //colocando dentro da tabela
         const tabela = $('<table>').append(linhas)
         $('#conteudo').append(tabela)
     
