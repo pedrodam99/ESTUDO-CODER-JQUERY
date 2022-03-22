@@ -53,5 +53,11 @@
             iniciar()
         }
         $('[wm-relogio]').each((i, e) => new Relogio(e))
+
+        $('[wm-relogio]').attr('opa') //ler attr
+        $('[wm-relogio]').attr('opa', 3) //alterar ou incluir attr
+        $('[wm-relogio]').attr({opa: 1, novo: true}) //incluir váiros usando obj
+        $('[wm-relogio]').removeAttr('opa').removeAttr('novo') //remover attr
+        
     </script>
 </body>
