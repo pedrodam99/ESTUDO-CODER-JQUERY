@@ -21,6 +21,24 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        const alternarDestaque = () => $('#div1').toggleClass('destaque')
+        //hover() acontece quando o mouse passa por cima do elemento
+        //podemos passar dois parametros, um pra executar na entrada e outro na saida
+        $('#div1').hover(alternarDestaque, alternarDestaque)
+
+        //one() é um evento que só é registrado uma única vez
+        $('#div1').one('mouseenter', e => alert('AVISO IMPORTANTE!!!'))
+
+        //dblclick() é um evento que intercepta o double click do mouse
+        $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000))
+
+        //resize() serve ppa quando a tela é redimensionada
+        $(window).resize(function (e) {
+            const l = $(window).width()
+            const a = $(window).height()
+            $('#resultado1').html(`Largura: ${l} Altura: ${a}`)
+            
+        })
+
     </script>
 </body>
