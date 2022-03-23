@@ -32,13 +32,14 @@
         //dblclick() é um evento que intercepta o double click do mouse
         $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000))
 
-        //resize() serve ppa quando a tela é redimensionada
-        $(window).resize(function (e) {
+        //resize() serve para quando a tela é redimensionada
+        const mostrarDimensoes = (e) => {
             const l = $(window).width()
             const a = $(window).height()
             $('#resultado1').html(`Largura: ${l} Altura: ${a}`)
-            
-        })
+        }
+        $(window).resize(mostrarDimensoes)
+
 
     </script>
 </body>
